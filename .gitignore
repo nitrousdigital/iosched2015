@@ -1,0 +1,6 @@
+/bin/
+/test-classes/
+/gwt-unitCache/
+/target/
+/build.properties
+/.DS_Store

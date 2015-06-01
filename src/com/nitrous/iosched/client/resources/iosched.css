@@ -1,0 +1,359 @@
+@def topToolbarIOIconLeftRightPadding 10px;
+@def headerBottomBorderWidth 1px;
+@def cardLeftRightMargin 5px;
+.header {
+	border-bottom: headerBottomBorderWidth solid #ddd;
+}
+
+.topToolbar {
+	background: #00bcd6;
+	color: white;
+}
+
+.topToolbarIOIcon {
+	padding-left: topToolbarIOIconLeftRightPadding;
+	padding-right: topToolbarIOIconLeftRightPadding;
+}
+
+.headerTabs {
+	background: white;
+}
+
+.popupDialogBottomButtonBar {
+/*	border-top: 1px solid #ccc; */	
+}
+
+.popupDialogHeaderBar {
+	border-bottom: 1px solid #ccc;	
+	background-color: #00bcd6;		
+}
+.popupDialogHeaderText {
+	text-align: center;
+	font-size: 14px;
+	font-family: "Roboto", sans-serif;
+	font-weight: bold;
+	line-height: 30px;
+	
+	cursor: pointer;
+	-webkit-font-smoothing: antialiased;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	color: white;
+}
+
+.popupDialogActionButton {
+	height: 20px !important;
+	line-height: 23px;
+	text-align: center;
+	font-size: 14px;
+	font-family: "Roboto", sans-serif;
+	font-weight: bold;
+	cursor: pointer;
+	-webkit-font-smoothing: antialiased;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	color: #008094;
+	-webkit-box-shadow: 9px 9px 10px 0px rgba(0, 0, 0, 0.22);
+	-moz-box-shadow: 9px 9px 10px 0px rgba(0, 0, 0, 0.22);
+	box-shadow: 9px 9px 10px 0px rgba(0, 0, 0, 0.22);
+	border: 1px solid #eee;
+	margin-left: 12px;	
+	margin-right: 12px;	
+}
+
+.popupDialog {
+	z-index: 2000;
+	background: #fff;
+	color: #212121;
+	-webkit-box-shadow: 9px 9px 10px 0px rgba(0, 0, 0, 0.22);
+	-moz-box-shadow: 9px 9px 10px 0px rgba(0, 0, 0, 0.22);
+	box-shadow: 9px 9px 10px 0px rgba(0, 0, 0, 0.22);
+}
+
+.sessionDetailTextContentPanel {
+	padding: 24px;
+}
+
+.noSessionsMatchFilterMessage {
+	font-family: 'Roboto', sans-serif;
+	color: #aaa;
+	font-size: 16px;
+	padding: 8px 5px 5px 10px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	/*
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	*/
+	line-height: 21px;
+	margin-right: 10px;
+	cursor: default;
+}
+
+.sessionDetailTitle {
+	font-family: 'Roboto', sans-serif;
+	letter-spacing: -0.02em;
+	color: #000;
+	font-size: 24px;
+	line-height: 36px;
+	font-weight: 400;
+}
+
+.sessionDetailTime {
+	color: #666666;
+	font-weight: 400;
+	line-height: 32px;
+	font-family: 'Roboto', sans-serif;
+	font-size: 14px;
+	margin-right: 10px;
+}
+
+.sessionDetailTags {
+	color: #BDBDBD;
+	font-weight: 400;
+	line-height: 32px;
+	font-family: 'Roboto', sans-serif;
+	font-size: 14px;
+}
+
+.sessionDetailDescription {
+	color: #666666;
+	font-size: 14px;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+	line-height: 24px;
+	letter-spacing: -0.01em;
+}
+
+.sessionDetailSpeakersHeader {
+	color: #212121;
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+	line-height: 24px;
+	padding: 24px 24px 0px 24px;
+	border-top: 1px solid #eee;
+}
+
+.sessionDetailSpeakersCard {
+	margin-top: 32px;
+}
+
+.sessionDetailSpeakersList {
+	padding: 0px 24px 24px 24px;
+}
+
+.sessionDetailSpeakersFace {
+	margin-right: 24px;
+}
+
+.sessionDetailSpeakersName {
+	color: #000;
+	font-size: 16px;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+	line-height: 24px;
+	letter-spacing: -0.01em;
+}
+
+.sessionDetailSpeakersCompany {
+	color: #666666;
+	font-size: 14px;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+	line-height: 24px;
+	letter-spacing: -0.01em;
+}
+
+.sessionDetailSpeakersBio {
+	color: #666666;
+	font-size: 14px;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+	line-height: 24px;
+	letter-spacing: -0.01em;
+	padding: 16px 0px 16px 0px;
+}
+
+.card {
+	background: #fff;
+	color: #212121;
+	border-radius: 3px;
+	box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.16), 0px 2px 5px 0px
+		rgba(0, 0, 0, 0.23);
+	border-bottom: 1px solid #eee;
+	margin: 5px cardLeftRightMargin 16px cardLeftRightMargin;
+	border-spacing: 0px;
+	border-collapse: collapse;
+}
+
+.cardExpired {
+	background: #eee;
+	color: #212121;
+	border-radius: 3px;
+	box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.16), 0px 2px 5px 0px
+		rgba(0, 0, 0, 0.23);
+	border-bottom: 1px solid #eee;
+	margin: 5px cardLeftRightMargin 16px cardLeftRightMargin;
+	border-spacing: 0px;
+	border-collapse: collapse;
+}
+
+.scrollPanel {
+	/* adds smooth scrolling on iOS but makes pull down header unreliable 
+	overflow-y: scroll; 
+  	-webkit-overflow-scrolling: touch;  		
+  	*/
+	
+}
+
+.scrollContent {
+	border-spacing: 0px;
+	border-collapse: collapse;
+}
+
+.scheduleExplorerGrid {
+	width: 100%;
+	border-spacing: 0px;
+	border-collapse: collapse;
+}
+
+.cardTitleRow {
+	border-bottom: 1px solid #eee;
+}
+
+@def cardTitleButtonHorizontalPadding 16px;
+.cardTitleButton {
+	padding: 8px 0px 8px cardTitleButtonHorizontalPadding;
+	color: #212121;
+	font-family: 'Roboto', sans-serif;
+	font-size: 20px;
+	line-height: 32px;
+	font-weight: 400;
+	cursor: default;
+}
+
+.browseSessionsButton {
+	padding: 5px 10px 5px 10px;
+	color: #212121;
+	font-family: 'Roboto', sans-serif;
+	font-size: 14px;
+	cursor: pointer;	
+}
+
+@def sessionTitleHorizontalMargin 10px;
+.sessionTitle {
+	font-size: 16px;
+	font-family: Roboto, sans-serif;
+	padding: 0px sessionTitleHorizontalMargin 0px
+		sessionTitleHorizontalMargin;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	line-height: 26px;
+	margin-right: 10px;
+	cursor: pointer;	
+	margin-top: 3px;
+}
+
+.sessionTimeRow {
+	padding-top: 5px;
+}
+
+.sessionTimeText {
+	font-size: 14px;
+	font-family: Roboto, sans-serif;
+	white-space: nowrap;
+	color: rgb(102, 102, 102);
+	text-overflow: ellipsis;
+	cursor: default;
+	margin: 0px 10px 0px 5px;
+}
+
+.popupMenuSeparator {
+	width: 100%;
+	height: 1px;
+	margin: 3px 0px 3px 0px;
+	background-color: rgba(0, 0, 0, 0.125);
+}
+
+.applicationMenuItem {
+	padding: 5px 10px 5px 10px;
+	white-space: nowrap;
+	color: rgb(102, 102, 102);
+	cursor: pointer;
+	line-height: 25px;
+}
+
+.popupMenuItem {
+	padding: 5px;
+	white-space: nowrap;
+}
+
+.filterPopupMenuHeader {
+	color: white;
+	background-color: #00bcd6;
+	font-size: 14px;
+	font-family: Roboto, sans-serif;
+	font-weight: bold;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	padding: 5px 5px 5px 5px;
+	text-align: center;
+}
+
+.popupMenuCloseButton {
+	text-align: center;
+	font-size: 14px;
+	font-family: "Roboto", sans-serif;
+	font-weight: bold;
+	line-height: 30px;
+	
+	cursor: pointer;
+	-webkit-font-smoothing: antialiased;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	color: #008094;
+
+	border-top: 1px solid #ccc;
+}
+
+.sessionMenuHeaderText {
+	font-size: 12px;
+	font-family: Roboto, sans-serif;
+	white-space: nowrap;
+	color: rgb(0, 0, 0);
+	text-overflow: ellipsis;
+	padding: 2px 5px 0px 5px;
+}
+
+@def sessionCheckBoxLeftMargin 10px;
+@def sessionCheckBoxRightMargin 10px;
+.sessionCheckBox {
+	padding: 5px;
+	margin: 7px sessionCheckBoxRightMargin 0px sessionCheckBoxLeftMargin;
+	cursor:pointer;
+}
+
+.sessionConflictStatusIcon {
+	padding: 3px 0px 0px 5px;
+}
+
+.sessionRow {
+	padding: 5px 0px 0px 0px;
+}
+.sessionRowExpired {
+	padding: 5px 0px 0px 0px;
+	background: #eee;
+	color: #999;
+}
+
+table .sessionRow {
+	border-spacing: 0px;
+	border-collapse: collapse;
+}

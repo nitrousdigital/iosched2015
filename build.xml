@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<project name="io15sched" default="war" basedir=".">
+
+	<!-- Load properties -->
+	<property file="build.properties"/>
+
+	<property name="webapp.name" value="io15sched"/>
+	<property name="war.file.name" value="${webapp.name}.war"/>
+
+	<property name="build.dir" value="target"/>
+	<property name="class.dir" location="${build.dir}/classes" />
+	<property name="build.war.dir" value="${build.dir}/war"/>
+	
+	<!-- Configure path to GWT SDK -->
+    <property name="gwt.args" value="" />
+	<property name="gwt.sdk" location="/Users/nitrousdigital/Downloads/gwt/gwt-2.7.0" />
+    <!-- <property name="gwt.style" value="PRETTY"/> --> 
+    <property name="gwt.style" value="OBFUSCATED"/> 
+    <property name="gwt.module" value="com.nitrous.iosched.IO15Scheduler"/>
+
+	<path id="project.class.path">
+		<!-- <fileset dir="lib" includes="**/*.jar" />  -->
+        <pathelement location="war/WEB-INF/lib/polygwt-source.jar" />
+        <pathelement location="${gwt.sdk}/gwt-user.jar" />
+        <fileset dir="${gwt.sdk}">
+        	<include name="gwt-dev*.jar" />
+            <include name="validation-api-*.jar" />
+    	</fileset>
+	</path>
+
+	<target name="clean">
+		<delete dir="${build.dir}" failonerror="false"/>
+	</target>
+
+	<target name="javac" depends="clean" description="Compile java source">
+		<mkdir dir="${class.dir}" />
+		<javac includes="**" encoding="utf-8" destdir="${class.dir}" source="1.7" target="1.7" nowarn="true" debug="true" debuglevel="lines,vars,source">
+			<src path="${basedir}/src" />
+			<classpath refid="project.class.path" />
+		</javac>
+
+	</target>
+
+	<target name="package-source" depends="javac" description="Package the source module for re-use in other projects">
+        <mkdir dir="${build.dir}"/>
+        <jar destfile="${build.dir}/${webapp.name}-source.jar">
+            <fileset dir="src">
+                <include name="**/*.java"/>
+                <include name="**/*.xml"/>
+                <exclude name="**/TronFontApplication.*"/>
+            </fileset>
+            <fileset dir="${class.dir}">
+                <include name="**/*.class"/>
+                <exclude name="**/TronFontApplication*.class"/>
+            </fileset>
+        </jar>
+	</target>
+	
+	<target name="jar" description="Package the servlet classes into a jar in the war staging directory">
+		<mkdir dir="${build.war.dir}/WEB-INF/lib"/>
+		<jar destfile="${build.war.dir}/WEB-INF/lib/${webapp.name}.jar">
+			<fileset dir="src" excludes="**/*.java" />
+			<fileset dir="${class.dir}">
+				<include name="**/*.class"/>
+			</fileset>
+		</jar>
+	</target>
+
+	<target name="gwtc" depends="javac" description="GWT compile to JavaScript">
+        <echo>GWT Compile ${gwt.style} ${gwt.module}</echo>
+        <java failonerror="true" fork="true" classname="com.google.gwt.dev.Compiler">
+            <classpath>
+                <pathelement location="src" />
+                <path refid="project.class.path" />
+            </classpath>
+            <!-- add jvmarg -Xss16M or similar if you see a StackOverflowError -->
+            <jvmarg value="-Xmx256M" />
+            <!-- Additional arguments like -style PRETTY or -logLevel DEBUG -->
+            <arg line="${gwt.args}" />
+            <arg value="${gwt.module}" />
+            <arg line="-style" />
+            <arg value="${gwt.style}" />
+        </java>
+	</target>
+	
+	<target name="war" depends="gwtc, jar" description="Build the web application">
+        <copy todir="${build.war.dir}/WEB-INF/lib" file="${gwt.sdk}/gwt-servlet.jar" />
+		<war destfile="${build.dir}/${war.file.name}">
+			<fileset dir="${build.war.dir}">
+				<include name="**/*"/>
+			</fileset>
+			<fileset dir="war">
+				<exclude name="**/.svn/**"/>
+			</fileset>
+		</war>
+	</target>
+</project>
