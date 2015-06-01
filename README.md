@@ -6,3 +6,5 @@ This application offers a subset of the functionality offered by the official Go
 * Schedule information is saved into cookies in the browser.
 * Sessions that are offered at more than one time during the conference are easily identified and links to the alternative times are provided in popup menus making it easier to define your schedule.
 * You are provided with warning icons to inform you when you have included a session in your schedule more than once.
+
+You can find the live application here: http://io2015schedule.appspot.com/ 
