@@ -9,6 +9,7 @@ This application offers a subset of the functionality offered by the official Go
 
 You can find the live application here: http://io2015schedule.appspot.com/ 
 
+
 You can emulate a specific time by using the 'now' URL argument.
 For example, to see what the app looked like at the beginning of day 2 of the conference: http://io2015schedule.appspot.com/?now=201505290900-0700
 
